@@ -1,0 +1,31 @@
+{
+  "data": {
+    "input_path": "../Data_Source/douyin_data_preprocessed.csv",
+    "output_path": "../Data_Source/douyin_data_generated.csv",
+    "fields": ["likes", "favorites", "reposts", "duration"],
+    "date_field": "publish_time"
+  },
+  "model": {
+    "random_seed": 42,
+    "latent_dim": 100,
+    "batch_size": 32,
+    "epochs": 1000,
+    "generator_hidden_dims": [128, 64],
+    "discriminator_hidden_dims": [64, 128]
+  },
+  "optimizer": {
+    "lr": 0.0002,
+    "betas": [0.5, 0.999]
+  },
+  "generation": {
+    "num_samples": 1000
+  },
+  "visualization": {
+    "plot_dir": "plots",
+    "figsize": [14, 7],
+    "comparison_figsize": [16, 12],
+    "dpi": 300,
+    "real_color": "#2c7fb8",
+    "generated_color": "#d95f02"
+  }
+}
